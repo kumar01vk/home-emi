@@ -9,7 +9,7 @@ const EmiCal = () => {
   const [loanAmount, setLoanAmount] = useState(0);
   const [interestRate, setInterestRate] = useState(0);
   const [loanTenure, setLoanTenure] = useState(0);
-//   const [emi, setEmi] = useState(0);
+  const [emi, setEmi] = useState(0);
   const [interest, setInterest] = useState(0);
   const [principal, setPrincipal] = useState(0);
 
@@ -25,7 +25,7 @@ const EmiCal = () => {
       (Math.pow(1 + rateOfInterest, loanDuration) - 1);
     const totalInterest = emi * loanDuration - principalAmount;
 
-    // setEmi(emi.toFixed(2));
+    setEmi(emi.toFixed(2));
     setInterest(totalInterest.toFixed(2));
     setPrincipal(principalAmount.toFixed(2));
   };
@@ -74,6 +74,8 @@ const EmiCal = () => {
           <Pie data={data} />
         </div>
       </div>
+          <h2> Monthly Payment: Rs {emi}</h2>
+          <h2> Interest Paid: Rs {interest}</h2>
     </div>
   );
 };
